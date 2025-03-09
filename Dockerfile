@@ -21,6 +21,7 @@ WORKDIR /app
 ARG RAILWAY_ENVIRONMENT
 ARG DATABASE_URI
 ARG PAYLOAD_SECRET
+ARG PREVIEW_SECRET
 
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
