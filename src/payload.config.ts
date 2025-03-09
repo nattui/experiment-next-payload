@@ -61,8 +61,7 @@ export default buildConfig({
   editor: defaultLexical,
   db: postgresAdapter({
     pool: {
-      connectionString:
-        'postgresql://neondb_owner:npg_9LZwVWU5RDBP@ep-soft-lake-a6gkkog2-pooler.us-west-2.aws.neon.tech/neondb?sslmode=require',
+      connectionString: process.env.DATABASE_URI || '',
     },
   }),
   collections: [Pages, Posts, Media, Categories, Users],
@@ -72,7 +71,7 @@ export default buildConfig({
     ...plugins,
     // storage-adapter-placeholder
   ],
-  secret: 'b7350fe45dcc21c759902ffd',
+  secret: process.env.PAYLOAD_SECRET,
   sharp,
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
