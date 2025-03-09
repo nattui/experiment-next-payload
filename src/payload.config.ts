@@ -61,7 +61,8 @@ export default buildConfig({
   editor: defaultLexical,
   db: postgresAdapter({
     pool: {
-      connectionString: process.env.DATABASE_URI || '',
+      connectionString:
+        'postgresql://neondb_owner:npg_9LZwVWU5RDBP@ep-soft-lake-a6gkkog2-pooler.us-west-2.aws.neon.tech/neondb?sslmode=require',
     },
   }),
   collections: [Pages, Posts, Media, Categories, Users],
