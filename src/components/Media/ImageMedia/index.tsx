@@ -57,20 +57,19 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
 
   return (
     <picture>
-      <img
+      <NextImage
         alt={alt || ''}
         className={cn(imgClassName)}
-        // fill={fill}
+        fill={fill}
         height={!fill ? height : undefined}
-        // placeholder="blur"
-        // blurDataURL={placeholderBlur}
-        // priority={priority}
-        // quality={100}
+        placeholder="blur"
+        blurDataURL={placeholderBlur}
+        priority={priority}
+        quality={100}
         loading={loading}
         sizes={sizes}
-        src={src as string}
+        src={src}
         width={!fill ? width : undefined}
-        suppressHydrationWarning
       />
     </picture>
   )
